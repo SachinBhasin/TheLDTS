@@ -4,6 +4,6 @@
     {
         public int LandlordId { get; set; }
         public string FirstName { get; set; }
-        public virtual ICollection<Property> Properties { get; set; }
+        public virtual ICollection<Property>? Properties { get; set; }
     }
 }
