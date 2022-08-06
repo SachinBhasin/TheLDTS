@@ -18,6 +18,39 @@
             <th>
                 @Html.DisplayNameFor(model => model.HouseNumber)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StreetName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Available)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CP12)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PAT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EICR)
+            </th>
+                    <th>
+                @Html.DisplayNameFor(model => model.EPC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LegionellaTest)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -29,6 +62,39 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.HouseNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StreetName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Available)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CP12)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EICR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EPC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LegionellaTest)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.PropertyId">Edit</a> |

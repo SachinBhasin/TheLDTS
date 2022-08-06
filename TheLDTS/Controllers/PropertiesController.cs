@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using TheLDTS.Data;
 using TheLDTS.Models;
 
+#nullable disable
+
 namespace TheLDTS.Controllers
 {
     public class PropertiesController : Controller
@@ -166,3 +168,5 @@ namespace TheLDTS.Controllers
         }
     }
 }
+
+#nullable enable
