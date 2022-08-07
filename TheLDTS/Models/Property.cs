@@ -35,22 +35,27 @@ namespace TheLDTS.Models
 
         [Display(Name = "Gas Safety Certificate")]
         [DataType(DataType.Date)]
+        [DateLessThanOrEqualToToday]
         public DateTime CP12 { get; set; }
 
         [Display(Name = "Portable Appliance Testing")]
         [DataType(DataType.Date)]
+        [DateLessThanOrEqualToToday]
         public DateTime PAT { get; set; }
 
         [Display(Name = "Electrical Installation Condition Report")]
         [DataType(DataType.Date)]
+        [DateLessThanOrEqualToToday]
         public DateTime EICR { get; set; }
 
         [Display(Name = "Energy Performance Certificate")]
         [DataType(DataType.Date)]
+        [DateLessThanOrEqualToToday]
         public DateTime EPC { get; set; }
 
         [Display(Name = "Legionella Risk Assessment")]
         [DataType(DataType.Date)]
+        [DateLessThanOrEqualToToday]
         public DateTime LegionellaTest { get; set; }
     }
 }
