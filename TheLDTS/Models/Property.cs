@@ -14,27 +14,23 @@ namespace TheLDTS.Models
 
         public virtual Landlord? Landlord { get; set; }
 
-        [Required]
+        [Display(Name = "House Number")]
         public int HouseNumber { get; set; }
 
-        [StringLength(60, MinimumLength = 3)]
+        [Display(Name = "Street Name")]
         public string StreetName { get; set; }
 
-        [Required]
-        [StringLength(60, MinimumLength = 3)]
         public string City { get; set; }
 
-        [Required]
-        [StringLength(60, MinimumLength = 4)]
         public string Country { get; set; }
 
-        [Required]
-        [StringLength(20, MinimumLength = 5)]
         public string Type { get; set; }
 
+        [Display(Name = "Rent per month")]
         [DataType(DataType.Currency)]
         public int Rent { get; set; }
 
+        [Display(Name = "Available?")]
         public bool Available { get; set; }
 
         [Display(Name = "Gas Safety Certificate")]
@@ -53,10 +49,9 @@ namespace TheLDTS.Models
         [DataType(DataType.Date)]
         public DateTime EPC { get; set; }
 
-        [Display(Name = "Legionalla Risk Assessment")]
+        [Display(Name = "Legionella Risk Assessment")]
         [DataType(DataType.Date)]
         public DateTime LegionellaTest { get; set; }
-
     }
 }
 

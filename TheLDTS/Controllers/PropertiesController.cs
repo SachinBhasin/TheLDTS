@@ -92,7 +92,7 @@ namespace TheLDTS.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PropertyId,LandlordID,HouseNumber")] Property property)
+        public async Task<IActionResult> Create([Bind("PropertyId,LandlordID,HouseNumber,StreetName,City,Country,Type,Rent,Available,CP12,PAT,EICR,EPC,LegionellaTest")] Property property)
         {
             if (ModelState.IsValid)
             {
@@ -126,7 +126,7 @@ namespace TheLDTS.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PropertyId,LandlordID,HouseNumber")] Property property)
+        public async Task<IActionResult> Edit(int id, [Bind("PropertyId,LandlordID,HouseNumber,StreetName,City,Country,Type,Rent,Available,CP12,PAT,EICR,EPC,LegionellaTest")] Property property)
         {
             if (id != property.PropertyId)
             {
