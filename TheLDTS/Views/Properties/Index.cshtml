@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1><b><i>The Property Table</i></b></h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -12,9 +12,9 @@
 
 <form asp-conroller="Properties" asp-action="Index" method="get">
     <p>
-        City: <input type="text" name="propertyCity" />
-        Country: <input type="text" name="propertyCountry" />
-        <input type="submit" value"Filter" />
+        <strong>City: </strong><input type="text" name="propertyCity" />
+        <strong>Country: </strong><input type="text" name="propertyCountry" />
+        <input type="submit" value="Filter" />
     </p>
 </form>
 
@@ -67,7 +67,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Landlord.LandlordId)
+                @Html.DisplayFor(modelItem => item.Landlord.FirstName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.HouseNumber)
@@ -108,7 +108,7 @@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.PropertyId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.PropertyId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PropertyId">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.PropertyId">Delete</a> |
             </td>
         </tr>
 }

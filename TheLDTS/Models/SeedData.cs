@@ -126,7 +126,7 @@ namespace TheLDTS.Models
                         Country = "United Kingdom",
                         Type = "Mansion",
                         Rent = 127500,
-                        Available = true,
+                        Available = false,
                         CP12 = DateTime.Parse("2004-08-19"),
                         PAT = DateTime.Parse("2009-02-09"),
                         EICR = DateTime.Parse("2009-10-04"),
