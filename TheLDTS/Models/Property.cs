@@ -2,6 +2,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+#nullable disable
+
 namespace TheLDTS.Models
 {
     public class Property
@@ -57,3 +59,5 @@ namespace TheLDTS.Models
 
     }
 }
+
+#nullable enable

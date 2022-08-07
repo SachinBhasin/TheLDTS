@@ -2,6 +2,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+#nullable disable
+
 namespace TheLDTS.Models
 {
     public class Landlord
@@ -28,3 +30,5 @@ namespace TheLDTS.Models
         public virtual ICollection<Property>? Properties { get; set; }
     }
 }
+
+#nullable enable
