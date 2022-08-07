@@ -24,10 +24,12 @@ namespace TheLDTS.Controllers
 
         // GET: Properties
 
-        public async Task<IActionResult> Index(Landlord landlord, string propertyCity)
+        public async Task<IActionResult> Index(Landlord landlord, string propertyCity, string propertyCountry)
         {
-            //var properties = _context.Property;
-            //properties = properties.Include(a => a.Landlord);
+            IQueryable<string> countryQuery = from p in _context.Property
+                                              orderby p.Country
+                                              select p.Country;
+
             IIncludableQueryable<TheLDTS.Models.Property, TheLDTS.Models.Landlord> properties;
             if (!string.IsNullOrEmpty(propertyCity))
             {
@@ -41,14 +43,23 @@ namespace TheLDTS.Controllers
                 properties = _context.Property
                     .Include(a => a.Landlord);
             }
-            //var theLDTSContext = properties.Property.Include(a => a.Landlord);
-            //return View(await theLDTSContext.ToListAsync());
+            
+            if(!string.IsNullOrEmpty(propertyCountry))
+            {
+                properties = _context.Property
+                    .Where(t => t.Country!.Contains(propertyCountry))
+                    .Include(a => a.Landlord);
+            }
+
+            var propertyfilterVM = new PropertyFilterViewModel
+            {
+                Countries = new SelectList(await countryQuery.Distinct().ToListAsync()),
+                Properties = await properties.ToListAsync()
+            };
 
             return View(await properties.ToListAsync());
 
         }
-
-        //public async Task<IActionResult> Index(Landlord landlord){}
 
         // GET: Properties/Details/5
         public async Task<IActionResult> Details(int? id)
