@@ -9,6 +9,14 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<form asp-conroller="Properties" asp-action="Index" method="get">
+    <p>
+        City: <input type="text" name="propertyCity" />
+        <input type="submit" value"Filter" />
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>

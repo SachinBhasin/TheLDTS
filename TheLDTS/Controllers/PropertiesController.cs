@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 using TheLDTS.Data;
 using TheLDTS.Models;
 
@@ -22,11 +23,32 @@ namespace TheLDTS.Controllers
         }
 
         // GET: Properties
-        public async Task<IActionResult> Index(Landlord landlord)
+
+        public async Task<IActionResult> Index(Landlord landlord, string propertyCity)
         {
-            var theLDTSContext = _context.Property.Include(a => a.Landlord);
-            return View(await theLDTSContext.ToListAsync());
+            //var properties = _context.Property;
+            //properties = properties.Include(a => a.Landlord);
+            IIncludableQueryable<TheLDTS.Models.Property, TheLDTS.Models.Landlord> properties;
+            if (!string.IsNullOrEmpty(propertyCity))
+            {
+                properties = _context.Property
+                    .Where(c => c.City!.Contains(propertyCity))
+                    .Include(a => a.Landlord);
+            }
+
+            else
+            {
+                properties = _context.Property
+                    .Include(a => a.Landlord);
+            }
+            //var theLDTSContext = properties.Property.Include(a => a.Landlord);
+            //return View(await theLDTSContext.ToListAsync());
+
+            return View(await properties.ToListAsync());
+
         }
+
+        //public async Task<IActionResult> Index(Landlord landlord){}
 
         // GET: Properties/Details/5
         public async Task<IActionResult> Details(int? id)
