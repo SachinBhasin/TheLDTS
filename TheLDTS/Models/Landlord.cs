@@ -25,7 +25,7 @@ namespace TheLDTS.Models
         [EmailAddress(ErrorMessage = "Please enter a valid email address!")]
         public string Email { get; set; }
 
-        [StringLength(11, MinimumLength = 11)]
+        [StringLength(11, MinimumLength = 11, ErrorMessage = "Please enter a valid phone number!")]
         public string PhoneNumber { get; set; }
 
         [Required]

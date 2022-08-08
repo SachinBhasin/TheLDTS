@@ -59,5 +59,4 @@ namespace TheLDTS.Models
         public DateTime LegionellaTest { get; set; }
     }
 }
-
 #nullable enable
