@@ -3,9 +3,9 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1><b><i>The Property Table</i></b></h1>
-
+<div class="text-center">
+    <h1><b><i>The Property Table</i></b></h1>
+</div>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -106,9 +106,11 @@
                 @Html.DisplayFor(modelItem => item.LegionellaTest)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.PropertyId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PropertyId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PropertyId">Delete</a> |
+                <a asp-action="Edit" asp-route-id="@item.PropertyId">Edit</a>
+                <br>
+                <a asp-action="Details" asp-route-id="@item.PropertyId">Details</a>
+                <br>
+                <a asp-action="Delete" asp-route-id="@item.PropertyId">Delete</a>
             </td>
         </tr>
 }
