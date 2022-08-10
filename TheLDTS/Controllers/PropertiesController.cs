@@ -88,8 +88,6 @@ namespace TheLDTS.Controllers
         }
 
         // POST: Properties/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("PropertyId,LandlordID,HouseNumber,StreetName,City,Country,Type,Rent,Available,CP12,PAT,EICR,EPC,LegionellaTest")] Property property)
@@ -122,8 +120,6 @@ namespace TheLDTS.Controllers
         }
 
         // POST: Properties/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("PropertyId,LandlordID,HouseNumber,StreetName,City,Country,Type,Rent,Available,CP12,PAT,EICR,EPC,LegionellaTest")] Property property)
